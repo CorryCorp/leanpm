@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Session } from './model/session';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-basic';
+  title = 'leanpm.io';
+  isLoggedIn = true;
+
+  session: Session = {
+    id: '',
+    user: {
+      id: '',
+      name: '',
+      email: '',
+      admin: false
+    }
+  };
+
+  onLogin(session:Session) {
+    this.session = session;
+  }
 }
